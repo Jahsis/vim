@@ -109,7 +109,7 @@ call pathogen#infect()
 " Powerline
 " git clone git://github.com/Lokaltog/powerline.git
 set laststatus=2
-python from powerline.ext.vim import source_plugin; source_plugin()
+"python from powerline.ext.vim import source_plugin; source_plugin()
 
 " Ctrlp
 let g:ctrlp_max_height = 30
