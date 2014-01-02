@@ -107,9 +107,16 @@ set noswapfile
 call pathogen#infect()
 
 " Powerline
-" git clone git://github.com/Lokaltog/powerline.git
+" pip install --user git+git://github.com/Lokaltog/powerline
+" wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+" mv PowerlineSymbols.otf to ~/.fonts/
+" wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+" mv 10-powerline-symbols.conf ~/.fonts.conf.d/
 set laststatus=2
-"python from powerline.ext.vim import source_plugin; source_plugin()
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 " Ctrlp
 let g:ctrlp_max_height = 30
