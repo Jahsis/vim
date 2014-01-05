@@ -27,20 +27,20 @@ vnoremap <C-Z> <C-C>:update<CR>
 inoremap <C-Z> <C-O>:update<CR>
 
 " Unbind arrow keys
-no <up> <Nop>
-no <right> <Nop>
-no <left> <Nop>
-no <down> <Nop>
+"no <up> <Nop>
+"no <right> <Nop>
+"no <left> <Nop>
+"no <down> <Nop>
 
-ino <up> <Nop>
-ino <right> <Nop>
-ino <left> <Nop>
-ino <down> <Nop>
+"ino <up> <Nop>
+"ino <right> <Nop>
+"ino <left> <Nop>
+"ino <down> <Nop>
 
-vno <up> <Nop>
-vno <right> <Nop>
-vno <left> <Nop>
-vno <down> <Nop>
+"vno <up> <Nop>
+"vno <right> <Nop>
+"vno <left> <Nop>
+"vno <down> <Nop>
 
 " Moving between windows
 map <C-J> <C-W>j
