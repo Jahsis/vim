@@ -77,6 +77,8 @@ set number
 set tw=79
 set nowrap
 set fo-=t
+set colorcolumn=80
+highlight ColorColumn ctermbg=233
 
 " Show cursor line
 set cursorline
