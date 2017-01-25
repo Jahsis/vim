@@ -94,6 +94,9 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
+autocmd FileType puppet set shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html set shiftwidth=2 tabstop=2 softtabstop=2
+
 " Search
 set hlsearch
 set incsearch
@@ -115,10 +118,11 @@ call pathogen#infect()
 " wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 " mv 10-powerline-symbols.conf ~/.fonts.conf.d/
 set laststatus=2
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" python from powerline.vim import setup as powerline_setup
+" python powerline_setup()
+" python del powerline_setup
 
 " Ctrlp
 let g:ctrlp_max_height = 30
