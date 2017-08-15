@@ -116,13 +116,13 @@ call pathogen#infect()
 " mv PowerlineSymbols.otf to ~/.fonts/
 " wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 " mv 10-powerline-symbols.conf ~/.fonts.conf.d/
+" set laststatus=2
+" set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
 set laststatus=2
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
-
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 " Ctrlp
 let g:ctrlp_max_height = 30
