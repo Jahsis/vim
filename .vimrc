@@ -88,14 +88,13 @@ set history=700
 set undolevels=700
 
 " Tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4
 set shiftround
 set expandtab
 
 autocmd FileType puppet set shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html set shiftwidth=2 tabstop=2 softtabstop=2
+"autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Search
 set hlsearch
@@ -123,6 +122,7 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 " python from powerline.vim import setup as powerline_setup
 " python powerline_setup()
 " python del powerline_setup
+
 
 " Ctrlp
 let g:ctrlp_max_height = 30
@@ -157,3 +157,4 @@ inoremap <silent>k <C-R>=OmniPopup('k')<CR>
 
 " Python editing
 set nofoldenable
+let g:pymode_rope = 0
