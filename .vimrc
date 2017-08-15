@@ -6,6 +6,7 @@ autocmd! bufwritepost .vimrc source %
 " Better copy & paste
 set pastetoggle=<F2>
 set clipboard=unnamed
+set nofoldenable
 
 " Mouse and backspace
 " set mouse=a
@@ -109,6 +110,14 @@ set noswapfile
 
 " Pathogen
 call pathogen#infect()
+" Pathogen load
+" filetype off
+"
+" call pathogen#infect()
+" call pathogen#helptags()
+"
+" filetype plugin indent on
+" syntax on
 
 " Powerline
 " pip install --user git+git://github.com/Lokaltog/powerline
@@ -155,6 +164,5 @@ endfunction
 inoremap <silent>j <C-R>=OmniPopup('j')<CR>
 inoremap <silent>k <C-R>=OmniPopup('k')<CR>
 
-" Python editing
-set nofoldenable
-let g:pymode_rope = 0
+" Autocompleate dropdown
+" let g:pymode_rope = 0
