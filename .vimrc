@@ -88,14 +88,22 @@ set cursorline
 set history=700
 set undolevels=700
 
-" Tabs
-autocmd FileType python set tabstop=4 softtabstop=4 shiftwidth=4
+""" Tabs
 set shiftround
+set autoindent
 set expandtab
+set ts=4
+set shiftwidth=4
 
-autocmd FileType puppet set shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType html set shiftwidth=2 tabstop=2 softtabstop=2
-"autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html setl ts=2 sts=2 shiftwidth=2
+autocmd FileType php setl ts=4 sts=4 shiftwidth=4
+autocmd FileType puppet setl ts=2 sts=2 shiftwidth=2
+autocmd FileType python setl ts=4 sts=4 shiftwidth=4
+autocmd FileType yaml setl ts=2 sts=2 shiftwidth=2
+autocmd Filetype css setl ts=2 sts=2 sw=2 expandtab
+autocmd Filetype htmldjango setl ts=2 sts=2 sw=2 expandtab
+
+autocmd BufNewFile,BufRead *.tpl set shiftwidth=2 tabstop=2 softtabstop=2
 
 " Search
 set hlsearch
