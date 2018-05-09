@@ -1,12 +1,32 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
+    branch = master
 [submodule ".vim/bundle/python-mode"]
 	path = .vim/bundle/python-mode
 	url = https://github.com/python-mode/python-mode.git
+    branch = master
 [submodule ".vim/bundle/vim-ansible-yaml"]
 	path = .vim/bundle/vim-ansible-yaml
 	url = https://github.com/chase/vim-ansible-yaml.git
+    branch = master
 [submodule ".vim/bundle/vim-puppet"]
 	path = .vim/bundle/vim-puppet
 	url = https://github.com/rodjek/vim-puppet.git
+    branch = master
+[submodule ".vim/bundle/vim-terraform"]
+	path = .vim/bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
+    branch = master
+[submodule ".vim/bundle/vim-jinja"]
+    path = .vim/bundle/vim-jinja
+    url = https://github.com/lepture/vim-jinja.git
+    branch = master
+[submodule ".vim/bundle/vim-json"]
+    path = .vim/bundle/vim-json
+    url = https://github.com/elzr/vim-json.git
+    branch = master
+[submodule ".vim/bundle/vim-surround"]
+    path = .vim/bundle/vim-surround
+    url = https://github.com/tpope/vim-surround.git
+    branch = master
