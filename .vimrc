@@ -8,10 +8,45 @@ set pastetoggle=<F2>
 set clipboard=unnamed
 set nofoldenable
 
-" Mouse and backspace
-" set mouse=a
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Preventing Backspace and Delete keys
+Bundle 'Valloric/YouCompleteMe'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'nvie/vim-flake8'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-syntastic/syntastic'
+
+call vundle#end()
+filetype plugin indent on
+
+" Need fix
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+set encoding=utf-8
+
+" For YouCompleateMe
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+let python_highlight_all=1
+syntax on
+
+let NERDTreeIgnore=['\.pyc$', '\~$']
+map <C-m> :NERDTreeToggle<CR>
+
 set bs=2
 
 " Bind <Leader> key
@@ -38,10 +73,10 @@ inoremap <C-Z> <C-O>:update<CR>
 "ino <left> <Nop>
 "ino <down> <Nop>
 
-"vno <up> <Nop>
-"vno <right> <Nop>
-"vno <left> <Nop>
 "vno <down> <Nop>
+"vno <left> <Nop>
+"vno <right> <Nop>
+"vno <up> <Nop>
 
 " Moving between windows
 map <C-J> <C-W>j
@@ -71,7 +106,6 @@ color wombat256
 " Syntax highlighting
 filetype off
 filetype plugin indent on
-syntax on
 
 " Show line number and length
 set number
@@ -116,61 +150,10 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Pathogen
-call pathogen#infect()
-" Pathogen load
-" filetype off
-"
-" call pathogen#infect()
-" call pathogen#helptags()
-"
-" filetype plugin indent on
-" syntax on
-
-" Powerline
-" pip install --user git+git://github.com/Lokaltog/powerline
-" wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
-" mv PowerlineSymbols.otf to ~/.fonts/
-" wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
-" mv 10-powerline-symbols.conf ~/.fonts.conf.d/
-" set laststatus=2
-" set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-
 set laststatus=2
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 
 " Ctrlp
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
-
-" Python-mode
-map <Leader>g :call RopeGotoDefinition()<CR>
-let ropevim_enable_shortcuts = 1
-let g:pymode_rope_goto_def_newwin = "vnew"
-let g:pymode_rope_extended_complete = 1
-let g:pymode_breakpoint = 0
-let g:pymode_syntax = 1
-let g:pymode_syntax_builtin_objs = 0
-let g:pymode_syntax_builtin_funcs = 0
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-
-function! OmniPopup(action)
-    if pumvisible()
-        if a:action == 'j'
-            return "\<C-N>"
-        elseif a:action == 'k'
-            return "\<C-P>"
-        endif
-    endif
-    return a:action
-endfunction
-
-inoremap <silent>j <C-R>=OmniPopup('j')<CR>
-inoremap <silent>k <C-R>=OmniPopup('k')<CR>
-
-" Autocompleate dropdown
-" let g:pymode_rope = 0
