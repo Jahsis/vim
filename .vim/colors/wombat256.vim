@@ -41,7 +41,6 @@ hi Pmenu		ctermfg=7		ctermbg=238						guifg=#f6f3e8	guibg=#444444
 hi PmenuSel		ctermfg=0		ctermbg=192						guifg=#000000	guibg=#cae682
 endif
 
-
 " Syntax highlighting
 hi Keyword		ctermfg=111		cterm=none		guifg=#8ac6f2	gui=none
 hi Statement	ctermfg=111		cterm=none		guifg=#8ac6f2	gui=none
@@ -55,7 +54,6 @@ hi Special		ctermfg=194		cterm=none		guifg=#e7f6da	gui=none
 hi String		ctermfg=113		cterm=none		guifg=#95e454	gui=italic
 hi Comment		ctermfg=246		cterm=none		guifg=#99968b	gui=italic
 hi Todo			ctermfg=245		cterm=none		guifg=#8f8f8f	gui=italic
-
 
 " Links
 hi! link FoldColumn		Folded

@@ -8,6 +8,9 @@ set pastetoggle=<F2>
 set clipboard=unnamed
 set nofoldenable
 
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" After that:
+" :PluginInstall
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -23,7 +26,7 @@ Plugin 'vim-syntastic/syntastic'
 call vundle#end()
 filetype plugin indent on
 
-" Need fix
+autocmd ColorScheme * highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set encoding=utf-8
 
@@ -44,13 +47,16 @@ EOF
 let python_highlight_all=1
 syntax on
 
-let NERDTreeIgnore=['\.pyc$', '\~$']
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__']
 map <C-m> :NERDTreeToggle<CR>
 
 set bs=2
 
 " Bind <Leader> key
 let mapleader = ","
+
+" 
+let g:syntastic_python_checkers = ['pyflakes', 'python', 'flake8']
 
 " Bind nohl
 noremap <C-n> :nohl<CR>
@@ -95,9 +101,6 @@ vnoremap <Leader>s :sort<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" Color whitespaces
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Color scheme
 set t_Co=256
