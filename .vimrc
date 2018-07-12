@@ -18,8 +18,10 @@ Bundle 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 
@@ -139,6 +141,8 @@ autocmd FileType python setl ts=4 sts=4 shiftwidth=4
 autocmd FileType yaml setl ts=2 sts=2 shiftwidth=2
 autocmd Filetype css setl ts=2 sts=2 sw=2 expandtab
 autocmd Filetype htmldjango setl ts=2 sts=2 sw=2 expandtab
+autocmd Filetype typescript setl ts=2 sts=2 sw=2 expandtab
+autocmd Filetype javascript setl ts=2 sts=2 sw=2 expandtab
 
 autocmd BufNewFile,BufRead *.tpl set shiftwidth=2 tabstop=2 softtabstop=2
 
