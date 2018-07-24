@@ -121,6 +121,10 @@ vnoremap > >gv
 " Color scheme
 " set t_Co=256
 " color wombat256
+
+" gruvbox
+let g:gruvbox_invert_indent_guides=1
+let g:gruvbox_contrast_dark = 'soft'
 colorscheme gruvbox
 set background=dark
 
@@ -189,7 +193,4 @@ set wildignore+=*/coverage/*
 set t_BE=
 
 " indentLine
-let g:indentLine_concealcursor=0
-
-" gruvbox
-let g:gruvbox_invert_indent_guides=0
+let g:indentLine_concealcursor=1
