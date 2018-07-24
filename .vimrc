@@ -6,7 +6,14 @@ autocmd! bufwritepost .vimrc source %
 " Better copy & paste
 set pastetoggle=<F2>
 set clipboard=unnamed
+
+" Enable folding
+set foldmethod=indent
+" set foldmethod=syntax
+set foldlevel=99
 set nofoldenable
+" Enable folding with the spacebar
+nnoremap <space> za
 
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " After that:
@@ -20,6 +27,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 
@@ -132,13 +142,13 @@ set expandtab
 set ts=4
 set shiftwidth=4
 
-autocmd FileType html setl ts=2 sts=2 shiftwidth=2
+autocmd FileType html setl ts=4 sts=4 shiftwidth=4
 autocmd FileType php setl ts=4 sts=4 shiftwidth=4
 autocmd FileType puppet setl ts=2 sts=2 shiftwidth=2
 autocmd FileType python setl ts=4 sts=4 shiftwidth=4
 autocmd FileType yaml setl ts=2 sts=2 shiftwidth=2
 autocmd Filetype css setl ts=2 sts=2 sw=2 expandtab
-autocmd Filetype htmldjango setl ts=2 sts=2 sw=2 expandtab
+autocmd Filetype htmldjango setl ts=4 sts=4 sw=4 expandtab
 
 autocmd BufNewFile,BufRead *.tpl set shiftwidth=2 tabstop=2 softtabstop=2
 
@@ -160,3 +170,6 @@ let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
+
+
+set t_BE=
