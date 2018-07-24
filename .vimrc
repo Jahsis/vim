@@ -124,7 +124,7 @@ vnoremap > >gv
 
 " gruvbox
 let g:gruvbox_invert_indent_guides=1
-let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_contrast_dark = 'medium'
 colorscheme gruvbox
 set background=dark
 
