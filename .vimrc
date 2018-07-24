@@ -22,7 +22,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Bundle 'Valloric/YouCompleteMe'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'Yggdroot/indentLine'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'hashivim/vim-terraform'
@@ -34,6 +34,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 
@@ -122,6 +124,10 @@ vnoremap > >gv
 colorscheme gruvbox
 set background=dark
 
+" Airline theme
+let g:airline_theme='gruvbox'
+let g:airline_powerline_fonts = 1
+
 " Syntax highlighting
 filetype off
 filetype plugin indent on
@@ -181,3 +187,9 @@ set wildignore+=*/coverage/*
 
 
 set t_BE=
+
+" indentLine
+let g:indentLine_concealcursor=0
+
+" gruvbox
+let g:gruvbox_invert_indent_guides=0
