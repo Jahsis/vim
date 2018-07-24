@@ -23,8 +23,12 @@ call vundle#begin()
 
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'Yggdroot/indentLine'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'hashivim/vim-terraform'
 Plugin 'kien/ctrlp.vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
@@ -113,8 +117,10 @@ vnoremap > >gv
 
 
 " Color scheme
-set t_Co=256
-color wombat256
+" set t_Co=256
+" color wombat256
+colorscheme gruvbox
+set background=dark
 
 " Syntax highlighting
 filetype off
@@ -149,6 +155,8 @@ autocmd FileType python setl ts=4 sts=4 shiftwidth=4
 autocmd FileType yaml setl ts=2 sts=2 shiftwidth=2
 autocmd Filetype css setl ts=2 sts=2 sw=2 expandtab
 autocmd Filetype htmldjango setl ts=4 sts=4 sw=4 expandtab
+autocmd Filetype typescript setl ts=2 sts=2 sw=2 expandtab
+autocmd Filetype javascript setl ts=2 sts=2 sw=2 expandtab
 
 autocmd BufNewFile,BufRead *.tpl set shiftwidth=2 tabstop=2 softtabstop=2
 
