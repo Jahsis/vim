@@ -16,9 +16,12 @@ call vundle#begin()
 
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'Yggdroot/indentLine'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'hashivim/vim-terraform'
 Plugin 'kien/ctrlp.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -105,8 +108,10 @@ vnoremap > >gv
 
 
 " Color scheme
-set t_Co=256
-color wombat256
+" set t_Co=256
+" color wombat256
+colorscheme gruvbox
+set background=dark
 
 " Syntax highlighting
 filetype off
