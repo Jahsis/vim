@@ -22,6 +22,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'chase/vim-ansible-yaml'
 " Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'Yggdroot/indentLine'
 Plugin 'gmarik/Vundle.vim'
