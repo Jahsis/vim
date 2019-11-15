@@ -26,9 +26,9 @@ Bundle 'chase/vim-ansible-yaml'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'Yggdroot/indentLine'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'hashivim/vim-terraform'
 Plugin 'kien/ctrlp.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'morhetz/gruvbox'
 Plugin 'mxw/vim-jsx'
 Plugin 'nvie/vim-flake8'
@@ -41,7 +41,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plugin 'vim-vdebug/vdebug'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
 filetype plugin indent on
@@ -55,7 +56,7 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "python with virtualenv support
-py << EOF
+py3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
@@ -77,6 +78,8 @@ let mapleader = ","
 
 " 
 let g:syntastic_python_checkers = ['pyflakes', 'python', 'flake8']
+let g:syntastic_ansible_checkers = ['ansible_lint']
+" let g:syntastic_check_on_open = 1
 
 " Bind nohl
 noremap <C-n> :nohl<CR>
@@ -140,6 +143,9 @@ let g:airline_powerline_fonts = 1
 filetype off
 filetype plugin indent on
 
+" Lines after cursor when scrolling
+set scrolloff=10
+
 " Show line number and length
 set number
 set tw=79
@@ -171,6 +177,7 @@ autocmd Filetype css setl ts=2 sts=2 sw=2 expandtab
 autocmd Filetype htmldjango setl ts=4 sts=4 sw=4 expandtab
 autocmd Filetype typescript setl ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascript setl ts=2 sts=2 sw=2 expandtab
+autocmd Filetype ansible.yaml setl tw=119 colorcolumn=120
 
 autocmd BufNewFile,BufRead *.tpl set shiftwidth=2 tabstop=2 softtabstop=2
 
@@ -198,3 +205,5 @@ set t_BE=
 
 " indentLine
 let g:indentLine_concealcursor=1
+
+set modeline
