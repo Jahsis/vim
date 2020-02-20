@@ -25,7 +25,9 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'chase/vim-ansible-yaml'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'Yggdroot/indentLine'
+Plugin 'fatih/vim-go'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'hashivim/vim-terraform'
 Plugin 'kien/ctrlp.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
@@ -42,7 +44,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-vdebug/vdebug'
-Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
 filetype plugin indent on
