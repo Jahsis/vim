@@ -148,6 +148,7 @@ filetype plugin indent on
 set scrolloff=10
 
 " Show line number and length
+set relativenumber
 set number
 set tw=79
 set nowrap
