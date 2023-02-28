@@ -15,38 +15,38 @@ set nofoldenable
 " Enable folding with the spacebar
 nnoremap <space> za
 
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" After that:
-" :PluginInstall
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'chase/vim-ansible-yaml'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'Yggdroot/indentLine'
-Plugin 'fatih/vim-go'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'hashivim/vim-terraform'
-Plugin 'kien/ctrlp.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'martinda/Jenkinsfile-vim-syntax'
-Plugin 'morhetz/gruvbox'
-Plugin 'mxw/vim-jsx'
-Plugin 'nvie/vim-flake8'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'vim-vdebug/vdebug'
+call plug#begin()
 
-call vundle#end()
-filetype plugin indent on
+Plug 'Valloric/YouCompleteMe'
+Plug 'chase/vim-ansible-yaml'
+Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'Yggdroot/indentLine'
+Plug 'fatih/vim-go'
+Plug 'hashivim/vim-terraform'
+Plug 'kien/ctrlp.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'morhetz/gruvbox'
+Plug 'mxw/vim-jsx'
+Plug 'nvie/vim-flake8'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree'
+Plug 'tmhedberg/SimpylFold'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'vim-vdebug/vdebug'
+
+call plug#end()
 
 autocmd ColorScheme * highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
